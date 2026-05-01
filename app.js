@@ -1,96 +1,103 @@
 // ── Configuration ──
-// Update these values to reflect real data
 const CONFIG = {
-  goalAmount: 50000,         // Total goal in dollars
-  currentAmount: 0,          // Amount raised so far
-  donorCount: 0,             // Number of donors
-  daysLeft: 60,              // Days remaining in campaign
-  donateUrl: 'https://your-donation-link.example.com', // Replace with real link
-  // Recent donors: { name, amount, time }
+  goalAmount: 50000,
+  currentAmount: 0,
+  donorCount: 0,
+  donateUrl: 'https://your-donation-link.example.com',
   donors: []
 };
 
-// ── DOM Elements ──
+// ── DOM ──
 const amountRaisedEl = document.getElementById('amount-raised');
 const goalAmountEl = document.getElementById('goal-amount');
 const progressFill = document.getElementById('progress-fill');
 const donorCountEl = document.getElementById('donor-count');
-const daysLeftEl = document.getElementById('days-left');
-const donateBtns = document.querySelectorAll('.donate-btn');
+const donateBtn = document.getElementById('donate-btn');
 const donorsList = document.getElementById('donors-list');
 
-// ── Format Currency ──
-function formatCurrency(amount) {
-  return '$' + amount.toLocaleString('en-US');
+// ── Helpers ──
+function formatCurrency(n) {
+  return '$' + n.toLocaleString('en-US');
 }
 
-// ── Animate Counter ──
-function animateCounter(el, target, prefix = '', duration = 1200) {
-  const start = 0;
-  const startTime = performance.now();
-
+function animateCounter(el, target, prefix, duration) {
+  duration = duration || 1200;
+  var start = performance.now();
   function tick(now) {
-    const elapsed = now - startTime;
-    const progress = Math.min(elapsed / duration, 1);
-    // Ease out cubic
-    const eased = 1 - Math.pow(1 - progress, 3);
-    const current = Math.round(start + (target - start) * eased);
-    el.textContent = prefix + current.toLocaleString('en-US');
-    if (progress < 1) requestAnimationFrame(tick);
+    var t = Math.min((now - start) / duration, 1);
+    var eased = 1 - Math.pow(1 - t, 3);
+    el.textContent = prefix + Math.round(target * eased).toLocaleString('en-US');
+    if (t < 1) requestAnimationFrame(tick);
   }
-
   requestAnimationFrame(tick);
 }
 
-// ── Render Progress ──
-function renderProgress() {
-  const pct = Math.min((CONFIG.currentAmount / CONFIG.goalAmount) * 100, 100);
-  amountRaisedEl.textContent = formatCurrency(CONFIG.currentAmount);
+// ── Render ──
+function render() {
+  var pct = CONFIG.goalAmount > 0
+    ? Math.min((CONFIG.currentAmount / CONFIG.goalAmount) * 100, 100)
+    : 0;
+
   goalAmountEl.textContent = formatCurrency(CONFIG.goalAmount);
   donorCountEl.textContent = CONFIG.donorCount.toString();
-  daysLeftEl.textContent = CONFIG.daysLeft > 0 ? CONFIG.daysLeft.toString() : 'Ended';
 
-  // Animate progress bar
-  setTimeout(() => {
-    progressFill.style.width = pct + '%';
-  }, 300);
-
-  // Animate the dollar amount
+  // Animate amount
   animateCounter(amountRaisedEl, CONFIG.currentAmount, '$');
+
+  // Animate bar after a small delay so transition is visible
+  setTimeout(function() {
+    progressFill.style.width = pct + '%';
+  }, 200);
+
+  // Donate link
+  donateBtn.href = CONFIG.donateUrl;
+
+  // Donors
+  renderDonors();
 }
 
-// ── Render Donors ──
 function renderDonors() {
-  if (CONFIG.donors.length === 0) {
+  if (!CONFIG.donors || CONFIG.donors.length === 0) {
     donorsList.innerHTML = '<p class="donors-empty">Be the first to donate — every contribution counts!</p>';
     return;
   }
-
-  donorsList.innerHTML = CONFIG.donors.map(d => `
-    <div class="donor-card">
-      <div>
-        <span class="donor-name">${d.name}</span>
-        <span class="donor-time" style="margin-left: 8px">${d.time}</span>
-      </div>
-      <span class="donor-amount">${formatCurrency(d.amount)}</span>
-    </div>
-  `).join('');
+  donorsList.innerHTML = CONFIG.donors.map(function(d) {
+    return '<div class="donor-row">' +
+      '<span class="donor-name">' + d.name + '</span>' +
+      '<div class="donor-right">' +
+        '<span class="donor-amount">' + formatCurrency(d.amount) + '</span>' +
+        '<span class="donor-time">' + d.time + '</span>' +
+      '</div>' +
+    '</div>';
+  }).join('');
 }
 
-// ── Set Donate Links ──
-function setDonateLinks() {
-  donateBtns.forEach(btn => {
-    if (btn.tagName === 'A') {
-      btn.href = CONFIG.donateUrl;
+// ── Tabs ──
+function switchTab(name) {
+  var tabs = document.querySelectorAll('.tab');
+  var contents = document.querySelectorAll('.tab-content');
+  tabs.forEach(function(t) {
+    t.classList.toggle('active', t.getAttribute('data-tab') === name);
+  });
+  contents.forEach(function(c) {
+    if (c.id === 'tab-' + name) {
+      c.style.display = '';
+    } else {
+      c.style.display = 'none';
     }
   });
 }
 
-// ── Initialize ──
-function init() {
-  renderProgress();
-  renderDonors();
-  setDonateLinks();
+// ── Share ──
+function sharePage() {
+  if (navigator.share) {
+    navigator.share({ title: 'Help Zohar', url: window.location.href });
+  } else {
+    navigator.clipboard.writeText(window.location.href).then(function() {
+      alert('Link copied to clipboard!');
+    });
+  }
 }
 
-document.addEventListener('DOMContentLoaded', init);
+// ── Init ──
+document.addEventListener('DOMContentLoaded', render);
