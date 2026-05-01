@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Help Zohar — Donate Now</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Top Nav -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <span class="nav-logo">❤️ <strong>Help Zohar</strong></span>
+      <a href="#donate-section" class="nav-donate-btn">Donate now</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <!-- Left: Image -->
+        <div class="hero-image-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1506744038136-46273834b4fb?w=800&q=80"
+            alt="Zohar"
+            class="hero-image"
+          />
+        </div>
+
+        <!-- Right: Donation Info -->
+        <div class="hero-info" id="donate-section">
+          <h1 class="hero-title">Help Zohar</h1>
+          <p class="hero-subtitle">Every contribution brings hope and healing</p>
+
+          <!-- Progress -->
+          <div class="progress-section">
+            <div class="amounts">
+              <span class="amount-raised" id="amount-raised">$0</span>
+              <span class="amount-goal">raised of <strong id="goal-amount">$50,000</strong> goal</span>
+            </div>
+
+            <div class="progress-bar-track">
+              <div class="progress-bar-fill" id="progress-fill" style="width: 0%"></div>
+            </div>
+
+            <div class="stats-row">
+              <div class="stat">
+                <span class="stat-number" id="donor-count">0</span>
+                <span class="stat-label">donors</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number" id="days-left">—</span>
+                <span class="stat-label">days left</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Donate Button -->
+          <a href="https://your-donation-link.example.com" class="donate-btn" id="donate-btn">
+            Donate now
+          </a>
+
+          <!-- Organizer -->
+          <div class="organizer">
+            <div class="organizer-icon">💛</div>
+            <div class="organizer-info">
+              <span class="organizer-name"><strong>Yehuda Cohen</strong> is organizing this fundraiser.</span>
+              <span class="organizer-detail">Created on May 1, 2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story">
+      <div class="story-inner">
+        <h2>Our Story</h2>
+        <p>
+          Zohar is a bright, resilient soul who has been facing challenges no one should have to face alone.
+          Right now, Zohar needs our support more than ever — for medical care, recovery, and the path
+          forward to a healthier, happier life.
+        </p>
+        <p>
+          Every dollar raised goes directly toward Zohar's treatment and related expenses. No amount is
+          too small — a shared post, a kind word, or a $5 donation all make a real difference.
+        </p>
+        <p>
+          Please consider donating and sharing this page with your community. Together, we can lift
+          Zohar up when it matters most.
+        </p>
+        <div class="story-cta">
+          <a href="https://your-donation-link.example.com" class="donate-btn donate-btn--outline">Donate now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Donors -->
+    <section class="recent-donors">
+      <div class="donors-inner">
+        <h3>Recent Supporters</h3>
+        <div class="donors-list" id="donors-list">
+          <p class="donors-empty">Be the first to donate — every contribution counts!</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p>Made with ❤️ for Zohar &mdash; 2026</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
