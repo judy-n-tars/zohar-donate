@@ -35,34 +35,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── GoFundMe Header ── */
-.gfm-header {
-  background: var(--white);
-  border-bottom: 1px solid var(--gray-200);
-  padding: 12px 24px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-.gfm-header-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-}
-.gfm-logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.gfm-sun { flex-shrink: 0; }
-.gfm-logo-text {
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: var(--green-gfm);
-  letter-spacing: -0.5px;
-}
-
 /* ── Page Container ── */
 .page-container {
   max-width: 1100px;
@@ -414,45 +386,6 @@ body {
   font-style: italic;
 }
 
-/* ── Bottom Tabs ── */
-.bottom-tabs {
-  display: flex;
-  justify-content: center;
-  gap: 0;
-  margin-top: 28px;
-  border-top: 1px solid var(--gray-200);
-  border-bottom: 1px solid var(--gray-200);
-}
-
-.tab-btn {
-  flex: 1;
-  max-width: 200px;
-  padding: 14px 0;
-  background: none;
-  border: none;
-  font-family: inherit;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--gray-500);
-  cursor: pointer;
-  transition: color 0.15s;
-  position: relative;
-}
-.tab-btn:hover { color: var(--gray-700); }
-.tab-btn.active {
-  color: var(--gray-900);
-  font-weight: 700;
-}
-.tab-btn.active::after {
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  left: 20%;
-  right: 20%;
-  height: 3px;
-  background: var(--green-gfm);
-  border-radius: 3px 3px 0 0;
-}
 
 /* ── Responsive ── */
 @media (max-width: 768px) {

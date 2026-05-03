@@ -42,13 +42,5 @@ function render() {
   }, 300);
 }
 
-// ── Tab Switching ──
-document.querySelectorAll('.tab-btn').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
-    btn.classList.add('active');
-  });
-});
-
 // ── Init ──
 document.addEventListener('DOMContentLoaded', render);
