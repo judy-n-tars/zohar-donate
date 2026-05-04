@@ -3,11 +3,6 @@ const CONFIG = {
   goalAmount: 72000,
   currentAmount: 5000,
   donateUrl: 'https://onehouse.kabbalah.com/en/giving/?fund=young-adults-zohar-2026',
-  donors: [
-    { name: 'Sarah L.', initials: 'SL', color: '#2196f3', comment: 'So excited for this!' },
-    { name: 'Ben G.', initials: 'BG', color: '#00bcd4', comment: 'A beautiful cause.' },
-    { name: 'Maria P.', initials: 'MP', color: '#ff9800', comment: "Let's make it happen!" },
-  ]
 };
 
 // ── DOM ──

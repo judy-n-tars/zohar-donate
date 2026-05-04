@@ -2,28 +2,24 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --magenta: #e91e63;
-  --orange: #ff9800;
-  --teal: #00bcd4;
-  --lime: #7cb342;
-  --yellow: #ffeb3b;
-  --navy: #1a1a2e;
-  --purple: #9c27b0;
-  --gold: #e6b84d;
-  --green-gfm: #00a651;
-  --green-dark: #15803d;
+  --gold: #b8860b;
+  --gold-light: #daa520;
+  --gold-subtle: #f5e6c8;
+  --cream: #fdf8f0;
+  --warm-white: #fffcf5;
+  --brown-dark: #3e2723;
+  --brown-medium: #5d4037;
+  --donate-red: #d9381e;
 
-  --gray-900: #111827;
+  --gray-900: #1a1a1a;
   --gray-700: #374151;
   --gray-500: #6b7280;
   --gray-300: #d1d5db;
   --gray-200: #e5e7eb;
   --gray-100: #f3f4f6;
-  --gray-50: #f9fafb;
-  --white: #ffffff;
 
   --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-display: 'Righteous', 'Bangers', cursive;
+  --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
 }
 
 html { font-size: 16px; scroll-behavior: smooth; }
@@ -39,7 +35,7 @@ body {
 .page-container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 24px 20px 48px;
+  padding: 32px 20px 48px;
 }
 
 /* ── Hero Two-Column ── */
@@ -57,53 +53,61 @@ body {
   gap: 20px;
 }
 
-/* ── Banner Card (Top Visual) ── */
+/* ── Banner Card ── */
 .banner-card {
   border-radius: 4px;
   overflow: hidden;
-  position: relative;
-  background: var(--white);
-  min-height: 320px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--gray-200);
+  background: var(--cream);
+  border: 1px solid var(--gold-subtle);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
 }
 
 .banner-content {
-  position: relative;
-  z-index: 2;
+  padding: 48px 40px;
   text-align: center;
-  padding: 40px 24px;
-  width: 100%;
 }
-
 
 .banner-title {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.75rem;
-  color: #000;
-  text-shadow: none;
-  -webkit-text-stroke: 0;
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--brown-dark);
   line-height: 1.3;
-  margin-bottom: 24px;
-  font-weight: 700;
+  margin-bottom: 20px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
+.ornament {
+  color: var(--gold-light);
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  letter-spacing: 12px;
+  opacity: 0.7;
+}
+
+.banner-description {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--brown-medium);
+  line-height: 1.8;
+  max-width: 480px;
+  margin: 0 auto;
+}
 
 /* ── Right Column: Donation Widget ── */
 .donate-widget {
-  background: var(--white);
+  background: var(--warm-white);
   border-radius: 4px;
   padding: 28px 24px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
   border: 1px solid var(--gray-200);
 }
 
 .widget-title {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--gray-900);
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--brown-dark);
   margin-bottom: 20px;
 }
 
@@ -112,72 +116,45 @@ body {
   margin-bottom: 16px;
 }
 
-.amount-pill {
-  display: inline-block;
-  background: var(--navy);
-  color: var(--white);
-  padding: 8px 20px;
-  border-radius: 999px;
-  margin-bottom: 8px;
+.amount-raised-row {
+  margin-bottom: 4px;
 }
 
 .amount-value {
-  font-size: 1.5rem;
-  font-weight: 800;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--donate-red);
 }
 
 .amount-goal-text {
   font-size: 0.9rem;
   color: var(--gray-500);
 }
-.raised-label {
-  font-weight: 700;
-  color: var(--gray-700);
-  text-transform: uppercase;
-  font-size: 0.8rem;
-}
 .goal-number {
   font-weight: 700;
-  color: var(--gray-900);
+  color: var(--gray-700);
 }
 
 /* ── Progress Bar ── */
 .progress-section {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .progress-bar-track {
   width: 100%;
-  height: 12px;
+  height: 10px;
   background: var(--gray-200);
   border-radius: 999px;
   overflow: hidden;
-  position: relative;
 }
 
 .progress-bar-fill {
   height: 100%;
   width: 7%;
-  background: linear-gradient(90deg, var(--lime), var(--green-gfm));
+  background: var(--gold-light);
   border-radius: 999px;
   transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
-  position: relative;
-  min-width: 24px;
-}
-
-.progress-cap {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 18px;
-  height: 18px;
-  background: var(--magenta);
-  border-radius: 50%;
-  border: 3px solid var(--white);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  margin-top: -9px;
-  margin-right: -9px;
+  min-width: 8px;
 }
 
 .progress-labels {
@@ -193,25 +170,24 @@ body {
   display: block;
   width: 100%;
   padding: 16px 24px;
-  background: #d9381e;
-  color: var(--white);
+  background: var(--donate-red);
+  color: var(--warm-white);
   text-align: center;
   text-decoration: none;
-  font-size: 1.15rem;
-  font-weight: 800;
-  letter-spacing: 1.5px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 2px;
   border-radius: 4px;
-  margin-bottom: 24px;
-  transition: transform 0.15s, box-shadow 0.15s;
-  box-shadow: 0 4px 14px rgba(217, 56, 30, 0.35);
+  margin-bottom: 8px;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+  box-shadow: 0 4px 14px rgba(217, 56, 30, 0.3);
 }
 .btn-donate:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(217, 56, 30, 0.45);
+  box-shadow: 0 6px 20px rgba(217, 56, 30, 0.4);
+  background: #c4301a;
 }
 .btn-donate:active { transform: translateY(0); }
-
-
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
@@ -219,7 +195,7 @@ body {
     grid-template-columns: 1fr;
     gap: 16px;
   }
-  .banner-card { min-height: 200px; }
-  .banner-title { font-size: 1.4rem; }
+  .banner-content { padding: 32px 20px; }
+  .banner-title { font-size: 1.5rem; }
   .page-container { padding: 16px 12px 32px; }
 }
