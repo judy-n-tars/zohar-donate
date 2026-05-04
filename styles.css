@@ -211,61 +211,6 @@ body {
 }
 .btn-donate:active { transform: translateY(0); }
 
-/* ── Recent Donations ── */
-.recent-donations {
-  border-top: 1px solid var(--gray-200);
-  padding-top: 18px;
-}
-
-.donations-title {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--gray-900);
-  margin-bottom: 14px;
-}
-
-.donations-list {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.donation-entry {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-}
-
-.donation-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--avatar-color, #2196f3);
-  color: var(--white);
-  font-size: 0.75rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.donation-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.donation-name {
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--gray-900);
-}
-
-.donation-comment {
-  font-size: 0.85rem;
-  color: var(--gray-500);
-  font-style: italic;
-}
 
 
 /* ── Responsive ── */
