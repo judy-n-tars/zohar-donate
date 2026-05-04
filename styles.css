@@ -59,14 +59,15 @@ body {
 
 /* ── Banner Card (Top Visual) ── */
 .banner-card {
-  border-radius: 16px;
+  border-radius: 4px;
   overflow: hidden;
   position: relative;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 70%, #1a1a2e 100%);
+  background: var(--white);
   min-height: 320px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid var(--gray-200);
 }
 
 .banner-content {
@@ -77,86 +78,23 @@ body {
   width: 100%;
 }
 
-/* Sunburst background */
-.banner-sunburst {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background: repeating-conic-gradient(
-    from 0deg at 35% 50%,
-    var(--gold) 0deg 5deg,
-    transparent 5deg 15deg
-  );
-  opacity: 0.15;
-}
-
-.banner-disco {
-  margin-bottom: 16px;
-}
-.disco-label {
-  font-family: var(--font-display);
-  font-size: 0.9rem;
-  color: var(--yellow);
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
 
 .banner-title {
-  font-family: var(--font-display);
-  font-size: 2.2rem;
-  color: #fff;
-  text-shadow: 2px 2px 0 rgba(0,0,0,0.5), 0 0 20px var(--magenta);
-  line-height: 1.15;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.75rem;
+  color: #000;
+  text-shadow: none;
+  -webkit-text-stroke: 0;
+  line-height: 1.3;
   margin-bottom: 24px;
-  -webkit-text-stroke: 1px rgba(233, 30, 99, 0.4);
-}
-
-/* Sefirot circles */
-.banner-sefirot {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-}
-.sefirah {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: var(--color);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.9rem;
   font-weight: 700;
-  box-shadow: 0 0 12px var(--color);
-  animation: sefirah-glow 2s ease-in-out infinite alternate;
-}
-@keyframes sefirah-glow {
-  from { filter: brightness(1); }
-  to { filter: brightness(1.3); }
 }
 
-.banner-book {
-  font-size: 3rem;
-  margin-bottom: 12px;
-}
-.book-glow {
-  filter: drop-shadow(0 0 20px var(--gold));
-}
-
-.banner-icons {
-  font-size: 1.4rem;
-  letter-spacing: 8px;
-  color: var(--yellow);
-  opacity: 0.8;
-}
 
 /* ── Right Column: Donation Widget ── */
 .donate-widget {
   background: var(--white);
-  border-radius: 16px;
+  border-radius: 4px;
   padding: 28px 24px;
   box-shadow: 0 2px 16px rgba(0,0,0,0.08);
   border: 1px solid var(--gray-200);
@@ -262,7 +200,7 @@ body {
   font-size: 1.15rem;
   font-weight: 800;
   letter-spacing: 1.5px;
-  border-radius: 12px;
+  border-radius: 4px;
   margin-bottom: 24px;
   transition: transform 0.15s, box-shadow 0.15s;
   box-shadow: 0 4px 14px rgba(217, 56, 30, 0.35);
@@ -336,9 +274,7 @@ body {
     grid-template-columns: 1fr;
     gap: 16px;
   }
-  .banner-card { min-height: 240px; }
-  .book-card { min-height: 200px; }
-  .book-title { font-size: 2rem; }
-  .banner-title { font-size: 1.5rem; }
+  .banner-card { min-height: 200px; }
+  .banner-title { font-size: 1.4rem; }
   .page-container { padding: 16px 12px 32px; }
 }
