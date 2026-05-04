@@ -153,63 +153,6 @@ body {
   opacity: 0.8;
 }
 
-/* ── Book Card (Bottom Visual) ── */
-.book-card {
-  border-radius: 16px;
-  overflow: hidden;
-  background: linear-gradient(180deg, #0a0a1a 0%, #0d1b2a 100%);
-  min-height: 280px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(255,255,255,0.05);
-}
-
-.book-bg {
-  text-align: center;
-  padding: 40px 24px;
-  width: 100%;
-}
-
-.hebrew-letters-top {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  margin-bottom: 24px;
-  font-size: 2.5rem;
-  font-weight: 800;
-  text-shadow: 0 0 20px currentColor;
-}
-
-.book-center {
-  position: relative;
-  display: inline-block;
-  margin-bottom: 20px;
-}
-
-.book-title {
-  font-family: var(--font-display);
-  font-size: 3rem;
-  color: #fff;
-  text-shadow: 0 0 30px var(--gold), 0 0 60px rgba(230, 184, 77, 0.4);
-  letter-spacing: 6px;
-}
-
-.book-subtitle {
-  font-size: 1.8rem;
-  color: var(--gold);
-  text-shadow: 0 0 20px var(--gold);
-  margin-top: 4px;
-}
-
-.lightning-bolts {
-  font-size: 1.8rem;
-  letter-spacing: 12px;
-  color: #64b5f6;
-  text-shadow: 0 0 15px #64b5f6;
-}
-
 /* ── Right Column: Donation Widget ── */
 .donate-widget {
   background: var(--white);
@@ -312,7 +255,7 @@ body {
   display: block;
   width: 100%;
   padding: 16px 24px;
-  background: linear-gradient(90deg, var(--magenta), var(--orange));
+  background: #d9381e;
   color: var(--white);
   text-align: center;
   text-decoration: none;
@@ -322,11 +265,11 @@ body {
   border-radius: 12px;
   margin-bottom: 24px;
   transition: transform 0.15s, box-shadow 0.15s;
-  box-shadow: 0 4px 14px rgba(233, 30, 99, 0.35);
+  box-shadow: 0 4px 14px rgba(217, 56, 30, 0.35);
 }
 .btn-donate:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(233, 30, 99, 0.45);
+  box-shadow: 0 6px 20px rgba(217, 56, 30, 0.45);
 }
 .btn-donate:active { transform: translateY(0); }
 
