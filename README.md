@@ -1,6 +1,6 @@
 # Help Zohar — Donation Landing Page
 
-A GoFundMe-inspired donation landing page with a progress meter, donor count, and "Donate now" button that links to the actual donation page.
+A donation landing page with a progress meter, donor count, and "Donate now" button that links to the actual donation page.
 
 ## Quick Start
 
