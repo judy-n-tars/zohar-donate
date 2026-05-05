@@ -22,11 +22,11 @@
   --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
 }
 
-html { font-size: 16px; scroll-behavior: smooth; margin: 0; padding: 0; height: 100%; background: url('zohar-bg.jpg') center center / cover no-repeat fixed; }
+html { font-size: 16px; scroll-behavior: smooth; height: 100%; margin: 0; padding: 0; }
 body {
   font-family: var(--font);
   color: var(--gray-900);
-  background: url('zohar-bg.jpg') center center / cover no-repeat fixed;
+  background: url('zohar-bg.jpg') top center / cover no-repeat fixed;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   margin: 0;
@@ -43,7 +43,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-position: top center;
 }
 
 /* ── Hero Two-Column ── */
