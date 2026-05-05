@@ -18,8 +18,8 @@
   --gray-200: #e5e7eb;
   --gray-100: #f3f4f6;
 
-  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-serif: "Mark", Verdana, sans-serif;
+  --font: 'Mark Pro Medium', 'MarkPro-Medium', 'DM Sans', Verdana, sans-serif;
+  --font-serif: 'DM Sans', Georgia, 'Times New Roman', serif;
 }
 
 html { font-size: 16px; scroll-behavior: smooth; height: 100%; margin: 0; padding: 0; }
