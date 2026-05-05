@@ -79,7 +79,7 @@ body {
   color: var(--brown-dark);
   line-height: 1.3;
   margin-bottom: 20px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.01em;
 }
 
@@ -94,10 +94,11 @@ body {
 .banner-description {
   font-family: var(--font-serif);
   font-size: 1.05rem;
-  color: var(--brown-medium);
+  color: var(--brown-dark);
   line-height: 1.8;
   max-width: 480px;
   margin: 0 auto;
+  font-weight: 500;
 }
 
 /* ── Right Column: Donation Widget ── */
