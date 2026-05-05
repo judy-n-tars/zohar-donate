@@ -99,7 +99,7 @@ body {
 
 .ornament {
   color: var(--gold-light);
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   margin-bottom: 20px;
   letter-spacing: 12px;
   opacity: 0.7;
@@ -148,7 +148,7 @@ body {
 }
 
 .amount-goal-text {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: var(--gray-500);
 }
 .goal-number {
@@ -182,7 +182,7 @@ body {
   display: flex;
   justify-content: space-between;
   margin-top: 6px;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: var(--gray-500);
 }
 
@@ -195,7 +195,7 @@ body {
   color: var(--warm-white);
   text-align: center;
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: 1.05rem;
   font-weight: 700;
   letter-spacing: 2px;
   border-radius: 4px;
