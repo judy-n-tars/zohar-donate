@@ -26,7 +26,7 @@ html { font-size: 16px; scroll-behavior: smooth; height: 100%; margin: 0; paddin
 body {
   font-family: var(--font);
   color: var(--gray-900);
-  background: url('zohar-bg.jpg') top center / cover no-repeat fixed;
+  background: url('zohar-bg.jpg') top -80px center / cover no-repeat fixed;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   margin: 0;
