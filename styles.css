@@ -19,7 +19,7 @@
   --gray-100: #f3f4f6;
 
   --font: sans-serif;
-  --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-serif: Verdana, sans-serif;
 }
 
 html { font-size: 16px; scroll-behavior: smooth; height: 100%; margin: 0; padding: 0; }
