@@ -1,7 +1,7 @@
 // ── Configuration ──
 const CONFIG = {
   goalAmount: 72000,
-  currentAmount: 8573,
+  currentAmount: 8817.09,
   donateUrl: 'https://onehouse.kabbalah.com/en/giving/?fund=young-adults-zohar-2026',
 };
 
@@ -14,7 +14,10 @@ const progressGoalLabel = document.getElementById('progress-goal-label');
 const donateBtn = document.getElementById('donate-btn');
 
 // ── Helpers ──
-function formatCurrency(n) {
+function formatCurrency(n, showCents) {
+  if (showCents) {
+    return '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
   return '$' + n.toLocaleString('en-US');
 }
 
@@ -24,9 +27,9 @@ function render() {
     ? Math.min((CONFIG.currentAmount / CONFIG.goalAmount) * 100, 100)
     : 0;
 
-  amountRaisedEl.textContent = formatCurrency(CONFIG.currentAmount);
-  goalAmountEl.textContent = formatCurrency(CONFIG.goalAmount);
-  progressGoalLabel.textContent = formatCurrency(CONFIG.goalAmount);
+  amountRaisedEl.textContent = formatCurrency(CONFIG.currentAmount, true);
+  goalAmountEl.textContent = formatCurrency(CONFIG.goalAmount, false);
+  progressGoalLabel.textContent = formatCurrency(CONFIG.goalAmount, false);
   progressPct.textContent = Math.round(pct) + '%';
 
   donateBtn.href = CONFIG.donateUrl;
