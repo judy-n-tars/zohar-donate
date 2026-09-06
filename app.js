@@ -1,7 +1,7 @@
 // ── Configuration ──
 const CONFIG = {
   goalAmount: 72000,
-  currentAmount: 49231.03,
+  currentAmount: 60403.54,
   donateUrl: 'https://onehouse.kabbalah.com/en/giving/?fund=young-adults-zohar-2026',
 };
 
